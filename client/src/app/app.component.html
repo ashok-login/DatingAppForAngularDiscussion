@@ -1,0 +1,26 @@
+<ul>
+    <li *ngFor="let user of users">
+        {{ user.userName }} - {{ user.password }}
+    </li>
+</ul>
+
+<p>Show User details using bootstrap Table</p>
+<div class="container-fluid">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th  scope="row">Id</th>
+                <th scope="row">Username</th>
+                <th scope="row">Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users" scope>
+                <td scope="row">{{ user.id }}</td>
+                <td scope="row">{{ user.userName }}</td>
+                <td scope="row">{{ user.password }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<app-promise-vs-observable></app-promise-vs-observable>
