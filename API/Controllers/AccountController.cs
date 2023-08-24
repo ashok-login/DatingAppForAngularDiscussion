@@ -1,23 +1,32 @@
 using API.Data;
+using API.DTOs;
 using API.Entities;
+using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
     public class AccountController : BaseApiController
     {
         private readonly DataContext _context;
-        public AccountController(DataContext context)
+        private readonly ITokenService _tokenService;
+
+        public AccountController(DataContext context, ITokenService tokenService)
         {
             _context = context;
+            _tokenService = tokenService;
         }
 
         [HttpPost]
-        public async Task<ActionResult<AppUser>> Register(AppUser user)
+        public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
         {
-            _context.AppUsers.Add(user);
-            await _context.SaveChangesAsync();
-            return StatusCode(StatusCodes.Status201Created, user);
+
+        }
+
+        private async Task<bool> UserExists(string username)
+        {
+            return await _context.AppUsers.AnyAsync(x => x.UserName == username);
         }
     }
 }
