@@ -72,3 +72,6 @@ E:\Desktop\DatingApp\API\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.
 E:\Desktop\DatingApp\API\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
 E:\Desktop\DatingApp\API\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 E:\Desktop\DatingApp\API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+E:\Desktop\DatingApp\API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Desktop\DatingApp\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+E:\Desktop\DatingApp\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

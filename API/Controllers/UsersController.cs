@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
 using API.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +19,7 @@ namespace API.Controllers
             _repository = repository;
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetAllUsers()
         {
