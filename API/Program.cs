@@ -17,18 +17,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddApplicationServices(builder.Configuration);
-
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKey"])),
-            ValidateIssuerSigningKey = true,
-            ValidateIssuer = false,
-            ValidateAudience = false
-        };
-    });
+builder.Services.AddIdentityServices(builder.Configuration);
 
 var app = builder.Build();
 

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'client';
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl = 'http://localhost:5000/api/';
   users: any;
 
   constructor(private http: HttpClient) {
