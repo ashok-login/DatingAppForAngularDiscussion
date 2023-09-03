@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PromiseVsObservableComponent } from './promise-vs-observable/promise-vs-observable.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PromiseVsObservableComponent
+    PromiseVsObservableComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
