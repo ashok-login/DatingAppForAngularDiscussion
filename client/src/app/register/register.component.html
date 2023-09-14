@@ -1,0 +1,19 @@
+<form>
+    <h2 class="text-center text-primary">Sign up</h2>
+</form>
+<hr>
+<div class="mb-3">
+    <input type="text" class="form-control" [(ngModel)]="model.username"
+        name="username" placeholder="Username" autocomplete="off" />
+</div>
+<div class="mb-3">
+    <input type="password" class="form-control" [(ngModel)]="model.password"
+    name="password" placeholder="Password" />
+</div>
+<div class="text-center">
+    <button class="btn btn-success me-2"
+    type="submit"
+    (click)="register()">Register</button>
+    <button class="btn ben-default"
+    type="button" (click)="cancel()">Cancel</button>
+</div>

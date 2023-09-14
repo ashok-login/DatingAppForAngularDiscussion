@@ -8,12 +8,16 @@ import { AppComponent } from './app.component';
 import { PromiseVsObservableComponent } from './promise-vs-observable/promise-vs-observable.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PromiseVsObservableComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

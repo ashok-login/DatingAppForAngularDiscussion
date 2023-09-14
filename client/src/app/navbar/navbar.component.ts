@@ -10,7 +10,7 @@ import { AccountService } from '../_services/account.service';
 export class NavbarComponent {
   model: any = {}
 
-  constructor(private accountService: AccountService) { }
+  constructor(public accountService: AccountService) { }
 
   login() {
     //Write code to save details in databse
