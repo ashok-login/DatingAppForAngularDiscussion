@@ -17,7 +17,8 @@
         <div class="row justify-content-center">
             <div class="col-4">
                 <p>Register form goes here</p>
-                <app-register [UsersOnHomePage]="users"></app-register>
+                <app-register [UsersOnHomePage]="users"
+                (cancelRegister)="cancelRegisterModel($event)"></app-register>
             </div>
         </div>
     </div>

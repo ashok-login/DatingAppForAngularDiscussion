@@ -10,6 +10,15 @@
     <input type="password" class="form-control" [(ngModel)]="model.password"
     name="password" placeholder="Password" />
 </div>
+<!--VERY IMPORTANT CODE: DON'T DELETE THIS COMMENT. This markup was written
+    while discussing about @Input() Directives in Angular.
+    <div class="mb-3">
+    <select class="form-select">
+        <option *ngFor="let user of UsersOnHomePage" [value]="user.userName">
+            {{ user.userName }}
+        </option>
+    </select>
+</div> -->
 <div class="text-center">
     <button class="btn btn-success me-2"
     type="submit"

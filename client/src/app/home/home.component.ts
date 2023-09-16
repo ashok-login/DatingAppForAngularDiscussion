@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  baseUrl = 'http://localhost:5001/api/';
+  baseUrl = 'https://localhost:5001/api/';
   registerMode: boolean = false;
   users: any;
 
@@ -23,5 +23,9 @@ export class HomeComponent implements OnInit {
 
   toggleRegisterMode() {
     this.registerMode = !this.registerMode;
+  }
+
+  cancelRegisterModel(event: boolean) {
+    this.registerMode = event;
   }
 }
