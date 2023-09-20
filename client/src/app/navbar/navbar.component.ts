@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AccountService } from '../_services/account.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,11 +11,14 @@ import { AccountService } from '../_services/account.service';
 export class NavbarComponent {
   model: any = {}
 
-  constructor(public accountService: AccountService) { }
+  constructor(public accountService: AccountService, private router: Router) { }
 
   login() {
-    //Write code to save details in databse
     this.accountService.login(this.model).subscribe();
+  }
+
+  isUserLoggedIn():boolean {
+    return this.accountService.isUserLoggedIn();
   }
 
   logout() {

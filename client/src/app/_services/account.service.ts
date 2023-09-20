@@ -36,6 +36,10 @@ export class AccountService {
     );
   }
 
+  isUserLoggedIn():boolean {
+    return (localStorage.getItem('user') != null);
+  }
+
   setCurrentUser(user: User):void {
     this.currentUserSource.next(user)
   }
