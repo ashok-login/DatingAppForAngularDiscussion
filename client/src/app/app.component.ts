@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Dept } from './_models/dept';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit {
   users: any;
   jsonString: string = '';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private toastr: ToastrService) {
 
   }
 
@@ -33,5 +34,9 @@ export class AppComponent implements OnInit {
     this.jsonString = JSON.stringify(dept);
     console.log(this.jsonString);
     /* End: JSON.stringify() method example */
+  }
+
+  ShowToaster():void {
+    this.toastr.success('This message is from ToastrService, a 3rd party component', 'Success!')
   }
 }
