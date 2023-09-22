@@ -22,10 +22,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  isUserLoggedInOrNotInRegisterMode():boolean {
-    return (this.accountService.isUserLoggedIn() || !this.registerMode);
-  }
-
   toggleRegisterMode() {
     this.registerMode = !this.registerMode;
   }

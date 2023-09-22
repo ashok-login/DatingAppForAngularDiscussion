@@ -14,14 +14,17 @@ export class NavbarComponent {
   constructor(public accountService: AccountService, private router: Router) { }
 
   login() {
-    this.accountService.login(this.model).subscribe();
-  }
-
-  isUserLoggedIn():boolean {
-    return this.accountService.isUserLoggedIn();
+    this.accountService.login(this.model).subscribe({
+      next: _ => this.router.navigateByUrl('/members'),
+      error: error => console.log(error),
+    });
   }
 
   logout() {
-    this.accountService.logout();
+    let result = confirm('Are you sure you want to logout?');
+    if (result == true) {
+      this.accountService.logout();
+      this.router.navigateByUrl('/');
+    }
   }
 }

@@ -19,13 +19,13 @@
           <!-- <button (click)="logout()">Logout</button> -->
         </ng-container>
       </ul>
-      <div *ngIf="!isUserLoggedIn()">
-        <form class="d-flex" autocomplete="off" *ngIf="!(accountService.currentUser$ | async)">
+      <div>
+        <form class="d-flex" autocomplete="off" (ngSubmit)="login()" *ngIf="!(accountService.currentUser$ | async)">
           <input class="form-control me-2" type="text" placeholder="Username" name="username"
             [(ngModel)]="model.username">
           <input class="form-control me-2" type="password" placeholder="Password" name="password"
             [(ngModel)]="model.password">
-          <button class="btn btn-success" type="submit" (click)="login()">Login</button>
+          <button class="btn btn-success" type="submit">Login</button>
         </form>
       </div>
     </div>
