@@ -7,13 +7,16 @@ import { map } from 'rxjs';
 export const authGuard: CanActivateFn = (route, state) => {
   const accountService = inject(AccountService);
   const toastr = inject(ToastrService);
-  return accountService.currentUser$.pipe(map(user => {
-    if(user) {
-      return true;
-    }
-    else {
-      toastr.error("Invalid username or password");
-      false;
-    }
-  }));  
+
+  return accountService.currentUser$.pipe(
+    map(user => {
+      if(user) {
+        return true;
+      }
+      else {
+        toastr.error('Invalid username/password');
+        return false;
+      }
+    })
+  );
 };
