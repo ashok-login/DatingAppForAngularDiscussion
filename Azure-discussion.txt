@@ -1,0 +1,29 @@
+Create .editorconfig file inside vscode root folder → Copy the contents of snippets/editorconfig.txt
+
+* How to delete some resource from Azure portal?
+* To get the context of the discussion, need to discuss:
+In ASP.NET Core application configuration settings can come from different configuration sources like
+	1. appsettings.json
+	2. User secrets
+	3. Environment variables
+	4. Command-line arguments
+
+Below is the main Agenda:
+* Create App Service Plan with Standard Pricing Tier (S1)
+* Create Web App that uses the above App Service Plan
+* Learn and Understand configuration options for the Web Apps.
+  * How to create "New Application Setting"?
+  * How to mark for Deployment slot setting?
+  * How to create connection string?
+  * While discussing about General settings → Stack Settings → Stack, discuss about the need for containers
+01. Create App Service Plan with S1 pricing tier (name: kakmca1-app-svc-plan-for-S1)
+02. Create a Web App (name: kakmca1-webapp) that run on App Service plan (kakmca1-app-svc-plan-for-S1)
+03. 
+
+Data Source=ASHOK-DELL\SQLEXPRESS;Initial Catalog=Practice;Persist Security Info=True;User ID=sa;Password=secret;Pooling=False;Multiple Active Result Sets=False;Encrypt=False;Trust Server Certificate=False;Command Timeout=0
+
+F:\Ashok\VS2022\Practice_On_VS_2022\ASPNETCoreMVC\appsettings.json
+C:\Users\Ashok\AppData\Roaming\Microsoft\UserSecrets\834a0353-b4b7-4746-8fe7-1a1a2254e1d6\secrets.json
+============================
+12: CONFIGURING CONTAINER APPS:
+

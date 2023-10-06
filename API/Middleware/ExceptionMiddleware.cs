@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Text.Json;
 using System.Threading.Tasks;
 using API.Errors;
 
@@ -21,7 +22,7 @@ namespace API.Middleware
             _env = env;
         }
 
-        public async Task InvokeAsnc(HttpContext context)
+        public async Task InvokeAsync(HttpContext context)
         {
             try
             {
@@ -35,10 +36,20 @@ namespace API.Middleware
                 var response = _env.IsDevelopment()
                     ? new ApiException(statusCode: context.Response.StatusCode,
                                 message: ex.Message,
-                                details: ex.StackTrace?.ToString())
+                                details: GetStackTrace(ex.StackTrace?.ToString()))
                     : new ApiException(statusCode: context.Response.StatusCode,
                                 message: ex.Message, details: "Internal Server Error");
+                var options = new JsonSerializerOptions {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                };
+                var json = JsonSerializer.Serialize(response, options);
+                await context.Response.WriteAsync(json);
             }
+        }
+
+        private string GetStackTrace(string? stackTrace)
+        {
+            return stackTrace ?? string.Empty;
         }
     }
 }
