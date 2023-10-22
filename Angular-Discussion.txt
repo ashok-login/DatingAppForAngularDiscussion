@@ -1,1 +1,25 @@
-E:\Desktop\DatingApp\API\Middleware\ExceptionMiddleware.cs
+AGENDA: What is the need to Global Exception Handling?
+
+Below is how we write code if Global Exception Handling is NOT in place.
+public async Task<ActionResult<Something>> SomeAction()
+{
+  try
+  {
+    ..
+    ..
+  }
+  catch(Exception ex)
+  {
+
+  }
+}
+
+
+If we have global exception handling in place, below is how we write/modify the code:
+public async Task<ActionResult<Something>> SomeAction()
+{
+   ..//Write your code
+}
+
+www.some-unknown-website.com
+
