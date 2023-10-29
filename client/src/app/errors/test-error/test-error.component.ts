@@ -15,7 +15,10 @@ export class TestErrorComponent {
   }
 
   get500Error() {
-
+    this.http.get(this.baseUrl + 'buggy/server-error').subscribe({
+      next: response = console.log(response),
+      error: error => console.log(error)
+    });
   }
 
   get401Error() {
